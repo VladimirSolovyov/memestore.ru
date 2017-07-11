@@ -54,7 +54,7 @@ $(document).ready(function() {
 	$('#search input[name=\'search\']').parent().find('button').on('click', function() {
 		var url = $('base').attr('href') + 'index.php?route=product/search';
 
-		var value = $('header #search input[name=\'search\']').val();
+		let value = $(this).parents('#search').children('input').val();
 
 		if (value) {
 			url += '&search=' + encodeURIComponent(value);
@@ -64,7 +64,7 @@ $(document).ready(function() {
 	});
 
 	$('#search input[name=\'search\']').on('keydown', function(e) {
-		if (e.keyCode == 13) {
+		if (e.keyCode == 13) { //по дефолту срабатывает первый
 			$('header #search input[name=\'search\']').parent().find('button').trigger('click');
 		}
 	});
