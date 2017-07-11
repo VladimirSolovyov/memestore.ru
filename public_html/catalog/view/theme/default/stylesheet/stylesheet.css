@@ -856,3 +856,10 @@ h2.price {
     background: none;
     border: none;
 }
+
+#navigation.fixed{
+	    position: fixed;
+	    top: 0;
+	    width: 100%;
+		z-index: 3;
+	}

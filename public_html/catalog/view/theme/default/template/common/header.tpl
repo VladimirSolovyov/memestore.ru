@@ -58,7 +58,7 @@
   </div>
 </header>
 <?php if ($categories) { ?>
-<div style="background-color: black;">
+<div style="background-color: black;" id="navigation">
 <div class="container">
   <nav id="menu" class="navbar menu_v">
     <div class="navbar-header"><span id="category" class="visible-xs"><?php echo $text_category; ?></span>

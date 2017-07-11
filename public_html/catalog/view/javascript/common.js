@@ -49,6 +49,17 @@ $(document).ready(function() {
 
 		$('#form-language').submit();
 	});
+	/*Menu fixed-top*/
+	  
+	     $(window).scroll(function(){
+	        if($(this).scrollTop()>80){
+	            $('#navigation').addClass('fixed');
+	        }
+	        else if ($(this).scrollTop()<80){
+	            $('#navigation').removeClass('fixed');
+	        }
+	    });
+
 
 	/* Search */
 	$('#search input[name=\'search\']').parent().find('button').on('click', function() {
