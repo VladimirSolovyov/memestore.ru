@@ -17,6 +17,8 @@
       <?php foreach ($categories as $category) { ?>
       <a href="<?php echo $category['href']; ?>" class="list-group-item <?php if($category['category_id'] == $defCatId) echo 'activCat';?>"><?php echo $category['name']; ?></a>
       <?php } ?> 
+      <div class="col-sm-9"><?php echo $search; ?>
+      </div>
     </div>
     <div id="banner0" class="owl-carousel" style="opacity: 0;">
   </div>
