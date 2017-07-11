@@ -308,7 +308,7 @@ div.required .control-label:before {
 /*end*/
 /* content */
 #content {
-	min-height: 600px;
+	min-height: 100%;
 }
 /* footer */
 footer {
