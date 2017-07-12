@@ -270,7 +270,8 @@
             </ul>
             
             <div class="form-group">
-              <button type="button"  id="button-cart"  data-loading-text="<?php echo $text_loading; ?>" onclick="cart.add('57', '1');"><img src="/image/ico/shopping-bag.svg" style="width: 20px; padding-bottom:5px;"> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></button>
+              <button type="button" id="button-cart" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary btn-lg btn-block"><?php echo $button_cart; ?></button>
+              <button type="button" style="visibility: hidden;"  id="button-cart"  data-loading-text="<?php echo $text_loading; ?>"><img src="/image/ico/shopping-bag.svg" style="width: 20px; padding-bottom:5px;"> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></button>
             </div>
             <?php if ($minimum > 1) { ?>
             <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $text_minimum; ?></div>
