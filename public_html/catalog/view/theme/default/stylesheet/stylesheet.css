@@ -720,7 +720,7 @@ h2.price {
 		border-left: none;
 	}
 }
-.product-thumb .button-group button {
+.product-thumb .button-group button, .form-group  button {
 	width: 60%;
     border: none;
     display: inline-block;
@@ -863,3 +863,64 @@ h2.price {
 	    width: 100%;
 		z-index: 3;
 	}
+
+.product-title-cat{
+	background-color: #fecb00;
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    height: 70px;
+    line-height: 70px;
+}
+.product-container{
+	background-color: #faf9fb;
+}
+.product-name {
+	font-size: 30px;
+    display: block;
+    font-weight: 100;
+    margin: 0;
+    margin-bottom: 50px;
+}
+
+label.flag-select{
+	position:relative;
+}
+
+label.flag-select:after {
+    content: '>';
+    font: 11px "Consolas", monospace;
+    background-color: #fecb00;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    color: black;
+    font-weight: bold;
+    transform: rotate(90deg);
+    right: -5px;
+    top: 5px;
+    padding-top: 1px;
+    padding-left: 9px;
+    padding-right: 9px;
+    position: absolute;
+    pointer-events: none;
+}
+
+select.size-option{
+	padding: 0;
+    color: black;
+    margin: 0;
+    height: 24px;
+    border-radius: 0px;
+    width: 40px;
+}
+
+#button-cart {
+    margin-top: 20px;
+    font-size: 16px;
+    background-image: none;
+    border-radius: 0;
+    padding: 5px;
+    width: 140px;
+}
