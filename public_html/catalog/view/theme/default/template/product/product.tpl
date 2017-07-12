@@ -16,14 +16,23 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+    <div id="content" class="col-sm-12"><?php echo $content_top; ?>
       <div class="row">
+        <div style="color: black;" class="col-sm-3">
+        <ul>
+        <span><?php echo $category_id; ?></span>
+        <span><?php echo var_dump($results); ?></span>  
+            <?php foreach ($categories as $category) { ?>
+            <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
+            <?php } ?>
+        </ul>
+        </div>
         <?php if ($column_left || $column_right) { ?>
         <?php $class = 'col-sm-6'; ?>
         <?php } else { ?>
         <?php $class = 'col-sm-8'; ?>
         <?php } ?>
-        <div class="<?php echo $class; ?>">
+        <div class="col-sm-6">
           <?php if ($thumb || $images) { ?>
           <ul class="thumbnails">
             <?php if ($thumb) { ?>
@@ -121,7 +130,7 @@
         <?php } else { ?>
         <?php $class = 'col-sm-4'; ?>
         <?php } ?>
-        <div style="color: black;" class="<?php echo $class; ?>">
+        <div style="color: black;" class="col-sm-3">
           <div class="btn-group" style="display:none;">
             <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product_id; ?>');"><i class="fa fa-heart"></i></button>
             <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product_id; ?>');"><i class="fa fa-exchange"></i></button>

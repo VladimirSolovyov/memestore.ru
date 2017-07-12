@@ -12,7 +12,13 @@ class ControllerProductProduct extends Controller {
 			'href' => $this->url->link('common/home')
 		);
 
+		$this->load->language('product/category');
+
 		$this->load->model('catalog/category');
+
+		$this->load->model('catalog/product');
+
+		$this->load->model('tool/image');
 
 		if (isset($this->request->get['path'])) {
 			$path = '';
@@ -36,6 +42,26 @@ class ControllerProductProduct extends Controller {
 						'href' => $this->url->link('product/category', 'path=' . $path)
 					);
 				}
+			}
+
+			//list categori
+
+			$data['categories'] = array();
+			$data['category_id'] = $category_id;
+			$results = $this->model_catalog_category->getCategories($category_id);
+
+			$data['results'] = $results;
+
+			foreach ($results as $result) {
+				$filter_data = array(
+					'filter_category_id'  => $result['category_id'],
+					'filter_sub_category' => true
+				);
+
+				$data['categories'][] = array(
+					'name' => $result['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+					'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url)
+				);
 			}
 
 			// Set the last category breadcrumb
