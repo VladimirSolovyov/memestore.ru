@@ -41,14 +41,15 @@ class ControllerProductProduct extends Controller {
 						'text' => $category_info['name'],
 						'href' => $this->url->link('product/category', 'path=' . $path)
 					);
+				
 				}
 			}
-
+			
 			//list categori
 
 			$data['categories'] = array();
 			$data['category_id'] = $category_id;
-			$results = $this->model_catalog_category->getCategories($category_id);
+			$results = $this->model_catalog_category->getCategories(0);
 
 			$data['results'] = $results;
 
@@ -60,7 +61,7 @@ class ControllerProductProduct extends Controller {
 
 				$data['categories'][] = array(
 					'name' => $result['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
-					'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url)
+					'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] )
 				);
 			}
 
@@ -90,6 +91,8 @@ class ControllerProductProduct extends Controller {
 					'text' => $category_info['name'],
 					'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . $url)
 				);
+				
+				$data['category_title'] = $category_info['name'];
 			}
 		}
 

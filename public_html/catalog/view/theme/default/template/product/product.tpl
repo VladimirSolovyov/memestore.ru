@@ -1,6 +1,6 @@
 <?php echo $header; ?>
 <div class="product-title-cat">
-  <span>Футболки</span>
+  <span><?php echo $category_title;?></span>
 </div>
 <div class="container product-container">
   <ul class="breadcrumb" style="display:none;">
@@ -18,14 +18,15 @@
     <?php } ?>
     <div id="content" class="col-sm-12"><?php echo $content_top; ?>
       <div class="row">
-        <div style="color: black;" class="col-sm-3">
-        <ul>
-        <span><?php echo $category_id; ?></span>
-        <span><?php echo var_dump($results); ?></span>  
-            <?php foreach ($categories as $category) { ?>
-            <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
+        <div class="list-group col-sm-3" style="padding-left: 20px;">
+            <?php foreach ($categories as $category) { 
+              $r=$category['name'];
+              $str=strpos($r, "(");
+              $r=trim(substr($r, 0, $str));
+              ?>
+            <a class="list-group-item <?php if(strcasecmp($r,$category_title)==0) echo 'activCat'; ?>" href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
             <?php } ?>
-        </ul>
+            
         </div>
         <?php if ($column_left || $column_right) { ?>
         <?php $class = 'col-sm-6'; ?>
