@@ -14,7 +14,7 @@
         <h4 style="font-weight:bold;">
           <?php echo $text_social; ?>
         </h4>
-          <div class="share">
+          <div class="share" style="padding-left: 0;">
             <a class="social social-vk" href="#"></a>
             <a class="social social-fb" href="#"></a>
             <a class="social social-tw" href="#"></a>
@@ -24,7 +24,7 @@
         <h4 style="font-weight:bold;">
           <?php echo $text_payment; ?>
         </h4>
-        <img src="/image/ico/paypment.png" />
+        <img src="/image/ico/paypment.png" style="margin-left: -8px;"/>
         <!--<ul class="list-unstyled">
           <li><a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a></li>
           <li><a href="<?php echo $voucher; ?>"><?php echo $text_voucher; ?></a></li>
