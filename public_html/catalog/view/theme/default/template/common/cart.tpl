@@ -1,5 +1,5 @@
-<div id="cart" class="btn-group btn-block">
-  <button type="button" data-toggle="dropdown" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-block dropdown-toggle"><img src="/image/ico/shopping-bag.svg" style="width: 20px; padding-bottom:5px;"/> <span id="cart-total">МОЯ КОРЗИНА</span><span class="items"><?php echo $text_items; ?></span></button>
+<div id="cart" class="btn-group btn-block" style="border-right: 2px solid black;">
+  <button type="button" data-toggle="dropdown" style="text-align: right;" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-block dropdown-toggle"><img src="/image/ico/shopping-bag.svg" style="width: 20px; padding-bottom:5px;"/> <span id="cart-total">МОЯ КОРЗИНА</span><span class="items"><?php echo $text_items; ?></span></button>
   <ul class="dropdown-menu pull-right">
     <?php if ($products || $vouchers) { ?>
     <li>

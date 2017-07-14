@@ -38,11 +38,10 @@
 <?php } ?>
 </head>
 <body class="<?php echo $class; ?>">
-
 <header>
   <div class="container">
     <div class="row">
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         <div id="logo">
           <?php if ($logo) { ?>
           <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
@@ -53,7 +52,26 @@
       </div>
       <div class="col-sm-5"><?php echo $search; ?>
       </div>
-      <div class="col-sm-3"><?php echo $cart; ?></div>
+      <div class="col-sm-3"><?php echo $cart; ?>
+      </div>
+      <div class="col-sm-1">
+      <ul class="list-inline" style="margin: 0;">
+        <li class="dropdown" style="font-size: 16px; line-height: 68px;"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><span class="hidden-xs hidden-sm hidden-md"><?php echo $text_account; ?></span></a>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <?php if ($logged) { ?>
+            <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
+            <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
+            <li><a href="<?php echo $transaction; ?>"><?php echo $text_transaction; ?></a></li>
+            <li><a href="<?php echo $download; ?>"><?php echo $text_download; ?></a></li>
+            <li><a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+            <?php } else { ?>
+            <li><a href="<?php echo $register; ?>"><?php echo $text_register; ?></a></li>
+            <li><a href="<?php echo $login; ?>"><?php echo $text_login; ?></a></li>
+            <?php } ?>
+          </ul>
+        </li>
+      </ul>
+      </div>
     </div>
   </div>
 </header>

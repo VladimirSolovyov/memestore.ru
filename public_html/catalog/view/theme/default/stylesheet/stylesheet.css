@@ -34,7 +34,7 @@ h6 {
 	font-size: 10.2px;
 }
 a {
-	color: #23a1d1;
+	color: black;
 }
 a:hover {
 	text-decoration: none;
@@ -79,7 +79,7 @@ div.required .control-label:before {
 }
 /* logo */
 #logo {
-	margin: 0 0 10px 0;
+	margin: 0 0 7px 0;
 }
 /* search */
 #search {
