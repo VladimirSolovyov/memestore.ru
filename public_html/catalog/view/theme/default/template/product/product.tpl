@@ -27,7 +27,8 @@
               ?>
             <a class="list-group-item <?php if(strcasecmp($r,$category_title)==0) echo 'activCat'; ?>" href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
             <?php } ?>
-            
+        <div class="col-sm-9"><?php echo $search; ?>
+        </div>    
         </div>
         <?php if ($column_left || $column_right) { ?>
         <?php $class = 'col-sm-6'; ?>

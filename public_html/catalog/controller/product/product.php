@@ -20,6 +20,8 @@ class ControllerProductProduct extends Controller {
 
 		$this->load->model('tool/image');
 
+
+		$data['search'] = $this->load->controller('common/search');
 		if (isset($this->request->get['path'])) {
 			$path = '';
 

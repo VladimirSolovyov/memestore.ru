@@ -27,8 +27,10 @@ class ControllerExtensionModuleCategory extends Controller {
 
 		$this->load->model('catalog/product');
 
-		$data['categories'] = array();
+		$data['search'] = $this->load->controller('common/search');
 
+		$data['categories'] = array();
+		
 		$categories = $this->model_catalog_category->getCategories(0);
 
 		foreach ($categories as $category) {

@@ -16,3 +16,5 @@
   <?php } ?>
   <?php } ?>
 </div>
+<div class="col-sm-9"><?php echo $search; ?>
+      </div>

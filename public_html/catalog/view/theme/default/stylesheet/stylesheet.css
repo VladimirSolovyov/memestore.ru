@@ -197,7 +197,7 @@ div.required .control-label:before {
 	color: #fff;
 	line-height: 40px;
 	font-size: 20px;
-	font-weight: normal;
+	font-weight: bold;
 }
 #menu .nav > li > a:hover, #menu .nav > li.open > a {
 	background-color: #fec71f;
