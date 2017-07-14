@@ -258,7 +258,10 @@ class ControllerProductProduct extends Controller {
 			$data['text_select'] = $this->language->get('text_select');
 			$data['text_manufacturer'] = $this->language->get('text_manufacturer');
 			$data['text_model'] = $this->language->get('text_model');
-			$data['text_reward'] = $this->language->get('text_reward');
+			$data['text_color'] = $this->language->get('text_color');
+			$data['text_material'] = $this->language->get('text_material');
+			$data['text_model'] = $this->language->get('text_model');
+			$data['text_print'] = $this->language->get('text_print');
 			$data['text_points'] = $this->language->get('text_points');
 			$data['text_stock'] = $this->language->get('text_stock');
 			$data['text_discount'] = $this->language->get('text_discount');
@@ -296,8 +299,11 @@ class ControllerProductProduct extends Controller {
 			$data['manufacturer'] = $product_info['manufacturer'];
 			$data['manufacturers'] = $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $product_info['manufacturer_id']);
 			$data['model'] = $product_info['model'];
+			$data['material'] = $product_info['ean'];
+			$data['print'] = $product_info['jan'];
 			$data['reward'] = $product_info['reward'];
 			$data['points'] = $product_info['points'];
+			$data['vova'] = $product_info;
 			$data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
 
 			if ($product_info['quantity'] <= 0) {
@@ -624,7 +630,7 @@ class ControllerProductProduct extends Controller {
 
 		$this->response->setOutput($this->load->view('product/review', $data));
 	}
-
+	
 	public function write() {
 		$this->load->language('product/product');
 

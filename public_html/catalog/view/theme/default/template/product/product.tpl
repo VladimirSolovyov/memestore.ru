@@ -1,4 +1,5 @@
 <?php echo $header; ?>
+<div>
 <div class="product-title-cat">
   <span><?php echo $category_title;?></span>
 </div>
@@ -137,11 +138,13 @@
             <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product_id; ?>');"><i class="fa fa-exchange"></i></button>
           </div>
           <span class="product-name"><u style="text-decoration: none; border-bottom: 1px solid black;"><?php echo $heading_title; ?></u></span>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled" style="margin-bottom: 0;">
             <?php if ($manufacturer) { ?>
             <li style="display:none;"><?php echo $text_manufacturer; ?> <a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a></li>
             <?php } ?>
-            <li><strong><?php echo $text_model; ?></strong> <?php echo $model; ?></li>
+            <li><strong><?php echo $text_color; ?></strong> <?php echo $model; ?></li>
+            <li><strong><?php echo $text_material; ?></strong> <?php echo $material; ?></li>
+            <li><strong><?php echo $text_print; ?></strong> <?php echo $print; ?></li>
             <?php if ($reward) { ?>
             <li  style="display:none;"><?php echo $text_reward; ?> <?php echo $reward; ?></li>
             <?php } ?>
