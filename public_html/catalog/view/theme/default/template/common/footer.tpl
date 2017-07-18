@@ -1,7 +1,7 @@
 <footer>
   <div class="container">
     <div class="row">
-      <div class="col-sm-4" style="padding-left:10%;">
+      <div class="col-sm-4" style="padding-left:15%;">
         <img src="/image/ico/about_us.svg" style="width: 40px; float: left; margin-left: -50px;"/><h4 style="font-weight:bold;"><?php echo $text_about; ?></h4>
         <ul class="list-unstyled">
         <?php foreach ($informations as $information) { ?>
@@ -9,7 +9,7 @@
           <?php } ?>
         </ul>
       </div>
-      <div class="col-sm-4" style="padding-left:10%;">
+      <div class="col-sm-4" style="padding-left:15%;">
         <img src="/image/ico/soc_seti.svg" style="width: 40px; float: left; margin-left: -50px;"/>
         <h4 style="font-weight:bold;">
           <?php echo $text_social; ?>
@@ -32,7 +32,7 @@
           <li><a href="<?php echo $special; ?>"><?php echo $text_special; ?></a></li>
         </ul>-->
       </div>
-      <div class="col-sm-4" style="padding-left:10%;">
+      <div class="col-sm-4" style="padding-left:15%;">
         <img src="/image/ico/support.svg" style="width: 40px; float: left; margin-left: -50px;"/>
         <h4 style="font-weight:bold;">
           <?php echo $text_contactInfo; ?>
