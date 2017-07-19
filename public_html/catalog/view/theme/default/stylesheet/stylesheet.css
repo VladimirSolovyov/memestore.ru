@@ -323,15 +323,10 @@ div.required .control-label:before {
 /* footer */
 footer {
 	margin-top: 30px;
-
     padding-top: 30px;
-
     padding-bottom: 30px;
-
     background-color: #ffffff;
-
     border-top: 3px solid #fecb00;
-
     color: #000;
 }
 footer hr {
@@ -925,4 +920,10 @@ select.size-option{
     border-radius: 0;
     padding: 5px;
     width: 140px;
+}
+
+
+.product-list-height:hover {
+	height: 300px;
+    z-index: 7;
 }
