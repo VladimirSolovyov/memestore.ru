@@ -12,7 +12,7 @@
     <?php echo $column_right; ?></div>
     <div class="container" style="background-color: #faf9fb; margin-bottom: -30px;">
     <div class="row" style="padding-top: 30px;">
-      <aside id="column-left" class="col-sm-3 hidden-xs">
+      <aside id="column-left" class="col-sm-3">
     <div class="list-group list-group-categoryExt">
       <?php foreach ($categories as $category) { ?>
       <a href="<?php echo $category['href']; ?>" class="list-group-item <?php if($category['category_id'] == $defCatId) echo 'activCat';?>"><?php echo $category['name']; ?></a>
