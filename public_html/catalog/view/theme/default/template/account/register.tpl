@@ -1,6 +1,9 @@
 <?php echo $header; ?>
+<div class="product-title-cat">
+  <span><?php echo $heading_title; ?></span>
+</div>
 <div class="container">
-  <ul class="breadcrumb">
+  <ul class="breadcrumb" style="display:none;">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
     <?php } ?>
@@ -17,8 +20,7 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?></h1>
-      <p><?php echo $text_account_already; ?></p>
+      <p style="margin-top: 10px;"><?php echo $text_account_already; ?></p>
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
         <fieldset id="account">
           <legend><?php echo $text_your_details; ?></legend>
@@ -78,7 +80,7 @@
               <?php } ?>
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group" style="display:none;">
             <label class="col-sm-2 control-label" for="input-fax"><?php echo $entry_fax; ?></label>
             <div class="col-sm-10">
               <input type="text" name="fax" value="<?php echo $fax; ?>" placeholder="<?php echo $entry_fax; ?>" id="input-fax" class="form-control" />
@@ -240,7 +242,7 @@
         </fieldset>
         <fieldset id="address">
           <legend><?php echo $text_your_address; ?></legend>
-          <div class="form-group">
+          <div class="form-group" style="display:none;">
             <label class="col-sm-2 control-label" for="input-company"><?php echo $entry_company; ?></label>
             <div class="col-sm-10">
               <input type="text" name="company" value="<?php echo $company; ?>" placeholder="<?php echo $entry_company; ?>" id="input-company" class="form-control" />
@@ -515,13 +517,13 @@
             <input type="checkbox" name="agree" value="1" />
             <?php } ?>
             &nbsp;
-            <input type="submit" value="<?php echo $button_continue; ?>" class="btn btn-primary" />
+            <input type="submit" style="border: none;background-image: linear-gradient(to bottom, #fecb00, #fec71f);color: #000;line-height: 38px;font-size: 16px;box-shadow: 0 0 15px rgba(0,0,0,0.5);text-transform: uppercase;" value="<?php echo $button_continue; ?>" class="btn btn-primary" />
           </div>
         </div>
         <?php } else { ?>
         <div class="buttons">
           <div class="pull-right">
-            <input type="submit" value="<?php echo $button_continue; ?>" class="btn btn-primary" />
+            <input type="submit" style="border: none;background-image: linear-gradient(to bottom, #fecb00, #fec71f);color: #000;line-height: 38px;font-size: 16px;box-shadow: 0 0 15px rgba(0,0,0,0.5);text-transform: uppercase;" value="<?php echo $button_continue; ?>" class="btn btn-primary" />
           </div>
         </div>
         <?php } ?>

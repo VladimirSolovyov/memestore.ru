@@ -1,6 +1,9 @@
 <?php echo $header; ?>
+<div class="product-title-cat" style="margin-bottom:10px;">
+  <span><?php echo $heading_title; ?></span>
+</div>
 <div class="container">
-  <ul class="breadcrumb">
+  <ul class="breadcrumb"  style="display:none;">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"> <?php echo $breadcrumb['text']; ?></a></li>
     <?php } ?>
@@ -17,7 +20,6 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?></h1>
       <p><?php echo $text_description; ?></p>
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>

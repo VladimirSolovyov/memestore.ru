@@ -1,6 +1,9 @@
 <?php echo $header; ?>
+<div class="product-title-cat" style="margin-bottom: 10px;">
+  <span><?php echo $breadcrumbs[2]['text']; ?></span>
+</div>
 <div class="container">
-  <ul class="breadcrumb">
+  <ul class="breadcrumb" style="display:none;">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
     <?php } ?>
