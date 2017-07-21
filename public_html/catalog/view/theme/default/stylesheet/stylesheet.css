@@ -930,3 +930,12 @@ select.size-option{
 	height: 300px;
     z-index: 7;
 }
+
+.popup-success{
+    margin: 10px 0px;
+    border: 1px solid #fec71f;
+    background-color: #fff1c7;
+    font-size: 16px;
+    padding: 5px;
+    text-align: center;
+}

@@ -1,6 +1,9 @@
 <?php echo $header; ?>
+<div class="product-title-cat" style="margin-bottom:10px;">
+  <span><?php echo $heading_title; ?></span>
+</div>
 <div class="container">
-  <ul class="breadcrumb">
+  <ul class="breadcrumb" style="display:none;">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
     <?php } ?>
@@ -29,11 +32,6 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?>
-        <?php if ($weight) { ?>
-        &nbsp;(<?php echo $weight; ?>)
-        <?php } ?>
-      </h1>
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
         <div class="table-responsive">
           <table class="table table-bordered">
@@ -75,8 +73,8 @@
                 <td class="text-left"><div class="input-group btn-block" style="max-width: 200px;">
                     <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="form-control" />
                     <span class="input-group-btn">
-                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="btn btn-primary"><i class="fa fa-refresh"></i></button>
-                    <button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger" onclick="cart.remove('<?php echo $product['cart_id']; ?>');"><i class="fa fa-times-circle"></i></button>
+                    <button type="submit" style="margin-left: 5px; box-shadow: none; line-height: 19px;" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="btn btn-primary"><i class="fa fa-refresh"></i></button>
+                    <button type="button" style="color: #000;border: none;border-radius: 0;margin-left: 5px; height: 34px;" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger" onclick="cart.remove('<?php echo $product['cart_id']; ?>');"><i class="fa fa-times-circle"></i></button>
                     </span></div></td>
                 <td class="text-right"><?php echo $product['price']; ?></td>
                 <td class="text-right"><?php echo $product['total']; ?></td>
