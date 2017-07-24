@@ -150,17 +150,16 @@ $(document).ready(function() {
 
 	//Moving to the cart animation
 	$(".to-cart").on("click",function(){
-       let product = $(this).parents('.product-thumb').find('.image img');//изображение товара
-
+      $(this).append('<span class="cart-first">+1</span>');//изображение товара
+ 		let product = $('.cart-first');
         $(product)
-            .clone()
-            .css({'position' : 'absolute', 'z-index' : '11100', top: $(this).offset().top-300, left:$(this).offset().left-100})
+            .css({'position' : 'absolute', 'z-index' : '11100', top: $(this).offset().top, left:$(this).offset().left})
             .appendTo("body")
-            .animate({opacity: 0.05,
+            .animate({opacity: 0.5,
                 left: $("#cart").offset()['left'] + 150,
                 top: $("#cart").offset()['top'],
-                width: 20}, 1000, function() {
-                $(this).remove();
+                }, 2000, function() {
+                $('.cart-first').remove();
             });
 
     });
@@ -192,7 +191,7 @@ var cart = {
 	
 					// Need to set timeout otherwise it wont update the total
 					setTimeout(function () {
-						$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+						$('#cart > button').html('<img src="/image/ico/shopping-bag.svg" style="width: 20px; padding-bottom:5px;"/><span id="cart-total"> ' + json['total'] + '</span>');
 					}, 100);
 
 					//$('html, body').animate({ scrollTop: 0 }, 'slow');
@@ -249,7 +248,7 @@ var cart = {
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
-					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+					$('#cart > button').html('<img src="/image/ico/shopping-bag.svg" style="width: 20px; padding-bottom:5px;"/><span id="cart-total"> ' + json['total'] + '</span>');
 				}, 100);
 
 				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
