@@ -51,7 +51,7 @@ $(document).ready(function() {
 	});
 	/*Menu fixed-top*/
 	  
-	     $(window).scroll(function(){
+	$(window).scroll(function(){
 	        if($(this).scrollTop()>80){
 	            $('#navigation').addClass('fixed');
 	        }
@@ -61,6 +61,9 @@ $(document).ready(function() {
 	    });
 
 
+	
+	
+	
 	/* Search */
 	$('#search input[name=\'search\']').parent().find('button').on('click', function() {
 		var url = $('base').attr('href') + 'index.php?route=product/search';
@@ -144,6 +147,23 @@ $(document).ready(function() {
 	$(document).ajaxStop(function() {
 		$('[data-toggle=\'tooltip\']').tooltip({container: 'body'});
 	});
+
+	//Moving to the cart animation
+	$(".to-cart").on("click",function(){
+       let product = $(this).parents('.product-thumb').find('.image img');//изображение товара
+
+        $(product)
+            .clone()
+            .css({'position' : 'absolute', 'z-index' : '11100', top: $(this).offset().top-300, left:$(this).offset().left-100})
+            .appendTo("body")
+            .animate({opacity: 0.05,
+                left: $("#cart").offset()['left'] + 150,
+                top: $("#cart").offset()['top'],
+                width: 20}, 1000, function() {
+                $(this).remove();
+            });
+
+    });
 });
 
 // Cart add remove functions
@@ -168,14 +188,14 @@ var cart = {
 				}
 
 				if (json['success']) {
-					$('#content').parent().before('<div class="alert alert-success popup-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button>   </div>');
+					//$('#content').parent().before('<div class="alert alert-success popup-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button>   </div>');
 	
 					// Need to set timeout otherwise it wont update the total
 					setTimeout(function () {
 						$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
 					}, 100);
 
-					$('html, body').animate({ scrollTop: 0 }, 'slow');
+					//$('html, body').animate({ scrollTop: 0 }, 'slow');
 
 					$('#cart > ul').load('index.php?route=common/cart/info ul li');
 				}

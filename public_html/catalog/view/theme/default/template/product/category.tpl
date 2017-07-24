@@ -128,7 +128,7 @@
                 <?php } ?>
               </div>
               <div class="button-group">
-                <button type="button" style="font-size: 16px;" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');"><img src="/image/ico/shopping-bag.svg" style="width: 20px; padding-bottom:5px;"> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></button>
+                <button type="button" class="to-cart" style="font-size: 16px;" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');"><img src="/image/ico/shopping-bag.svg" style="width: 20px; padding-bottom:5px;"> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></button>
                 <button style="display:none;" type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i></button>
                 <button style="display:none;" type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
               </div>
