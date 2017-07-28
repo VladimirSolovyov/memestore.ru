@@ -122,7 +122,7 @@ class ControllerCommonCart extends Controller {
 				'href'      => $this->url->link('product/product','path='. $path .'&product_id=' . $product['product_id'])
 			);
 		}
-
+		
 		// Gift Voucher
 		$data['vouchers'] = array();
 
