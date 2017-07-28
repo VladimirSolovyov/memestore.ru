@@ -3,8 +3,12 @@ class ControllerCommonCart extends Controller {
 	public function index() {
 		$this->load->language('common/cart');
 
+
+
 		// Totals
 		$this->load->model('extension/extension');
+		$this->load->model('catalog/category');
+
 
 		$totals = array();
 		$taxes = $this->cart->getTaxes();
@@ -100,7 +104,10 @@ class ControllerCommonCart extends Controller {
 				$price = false;
 				$total = false;
 			}
-
+			
+			$categories = $this->model_catalog_product->getCategories($product['product_id']);
+			$path = $categories[0]['category_id'];
+			
 			$data['products'][] = array(
 				'cart_id'   => $product['cart_id'],
 				'thumb'     => $image,
@@ -111,7 +118,8 @@ class ControllerCommonCart extends Controller {
 				'quantity'  => $product['quantity'],
 				'price'     => $price,
 				'total'     => $total,
-				'href'      => $this->url->link('product/product', 'product_id=' . $product['product_id'])
+				'title'		=> $path,
+				'href'      => $this->url->link('product/product','path='. $path .'&product_id=' . $product['product_id'])
 			);
 		}
 
