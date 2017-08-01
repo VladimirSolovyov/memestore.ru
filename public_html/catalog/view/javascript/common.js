@@ -1,6 +1,6 @@
 function getURLVar(key) {
 	var value = [];
-
+//1
 	var query = String(document.location).split('?');
 
 	if (query[1]) {
