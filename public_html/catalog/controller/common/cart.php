@@ -3,12 +3,10 @@ class ControllerCommonCart extends Controller {
 	public function index() {
 		$this->load->language('common/cart');
 
-
-
 		// Totals
 		$this->load->model('extension/extension');
 		$this->load->model('catalog/category');
-
+		$this->load->model('catalog/product');
 
 		$totals = array();
 		$taxes = $this->cart->getTaxes();
